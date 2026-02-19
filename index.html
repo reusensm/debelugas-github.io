@@ -12,6 +12,8 @@
         .hero-gradient { background: linear-gradient(135deg, #004e92 0%, #000428 100%); }
         .accent-color { color: #00d2ff; }
         .ticket-glow { box-shadow: 0 0 30px rgba(0, 210, 255, 0.2); }
+        .player-card img { filter: grayscale(30%); transition: all 0.5s ease; }
+        .player-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -21,9 +23,9 @@
             <img src="images/belugaslogo.webp" alt="De Beluga's Logo" class="h-10 w-auto">
             <div class="hidden md:flex space-x-8 font-bold uppercase tracking-widest text-xs">
                 <a href="#home" class="hover:text-cyan-400 transition">Home</a>
-                <a href="#agenda" class="text-cyan-400 hover:text-white transition underline underline-offset-8">Tickets</a>
+                <a href="#agenda" class="hover:text-cyan-400 transition">Agenda</a>
                 <a href="#spelers" class="hover:text-cyan-400 transition">Spelers</a>
-                <a href="#boeking" class="hover:text-cyan-400 transition border border-cyan-500 px-3 py-1 rounded">Boek ons</a>
+                <a href="#boeking" class="bg-cyan-500 text-black px-4 py-2 rounded-full hover:bg-white transition">Boek ons</a>
             </div>
         </div>
     </nav>
@@ -32,91 +34,135 @@
         <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 animate__animated animate__fadeInLeft">
                 <h1 class="text-6xl md:text-8xl font-black mb-4 uppercase tracking-tighter leading-none">DE <br><span class="accent-color">BELUGA'S</span></h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">Improvisatietheater op het scherpst van de snede. Geen script, enkel pure energie.</p>
-                <a href="#agenda" class="bg-cyan-500 hover:bg-cyan-400 text-black font-black py-4 px-10 rounded-full transition-all transform hover:scale-105 inline-block text-lg shadow-xl">KOOP TICKETS</a>
-            </div>
-            <div class="md:w-1/2 mt-12 md:mt-0 animate__animated animate__zoomIn flex justify-center">
-                <img src="images/belugaslogo.webp" alt="Beluga Logo" class="w-3/4 drop-shadow-[0_0_50px_rgba(0,210,255,0.4)]">
-            </div>
-        </div>
-    </section>
-
-    <section id="agenda" class="py-24 bg-zinc-900 border-t border-white/5">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-black text-center mb-4 uppercase tracking-tighter">Onze <span class="accent-color">Agenda</span></h2>
-            <p class="text-gray-400 text-center mb-16">Zorg dat je erbij bent. De plaatsen zijn vaak beperkt!</p>
-
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-black border-2 border-cyan-500/50 rounded-3xl p-8 ticket-glow flex flex-col md:flex-row items-center justify-between gap-8 transform hover:scale-[1.02] transition">
-                    <div class="text-center md:text-left">
-                        <div class="text-cyan-400 font-bold uppercase tracking-widest text-sm mb-2">Eerstvolgende show</div>
-                        <h3 class="text-3xl font-black mb-1">De Beluga's in Leuven</h3>
-                        <p class="text-gray-400 flex items-center justify-center md:justify-start">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                            Donderdag 12 maart 2026 — 20:00u
-                        </p>
-                        <p class="text-gray-400 flex items-center justify-center md:justify-start mt-1">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
-                            De Blauwe Kater, Leuven
-                        </p>
-                    </div>
-                    <div>
-                        <a href="https://www.debelugas.be/optredens" target="_blank" class="bg-white text-black font-black py-4 px-8 rounded-xl hover:bg-cyan-400 transition-colors inline-block text-center whitespace-nowrap">
-                            TICKETS RESERVEREN
-                        </a>
-                    </div>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">Niets staat vast. Alles is mogelijk. Improvisatietheater op het scherpst van de snede.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#agenda" class="bg-cyan-500 hover:bg-cyan-400 text-black font-black py-4 px-10 rounded-full transition-all transform hover:scale-105 inline-block text-center shadow-xl">KOOP TICKETS</a>
+                    <a href="#spelers" class="border-2 border-white hover:bg-white hover:text-black font-black py-4 px-10 rounded-full transition-all inline-block text-center">DE CAST</a>
                 </div>
             </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 animate__animated animate__zoomIn flex justify-center">
+                <img src="images/belugaslogo.webp" alt="Beluga Logo Groot" class="w-3/4 drop-shadow-[0_0_50px_rgba(0,210,255,0.4)]">
+            </div>
         </div>
     </section>
 
-    <section id="boeking" class="py-24 bg-black">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-2xl mx-auto p-12 rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
-                <h2 class="text-3xl font-black mb-6 uppercase tracking-tighter">Wil je ons <span class="accent-color">boeken?</span></h2>
-                <p class="text-gray-400 mb-10 leading-relaxed">
-                    Op zoek naar een unieke act voor je event, bedrijfsfeest of vereniging? De Beluga's brengen improvisatie op maat.
-                </p>
-                <a href="mailto:debelugas@gmail.com?subject=Aanvraag Boeking De Beluga's" class="inline-flex items-center text-xl font-bold hover:text-cyan-400 transition">
-                    <svg class="w-8 h-8 mr-3 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    debelugas@gmail.com
-                </a>
+    <section id="agenda" class="py-24 bg-black border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-tighter">Onze <span class="accent-color">Agenda</span></h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-zinc-900 border border-cyan-500/30 rounded-3xl p-8 ticket-glow flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="text-center md:text-left">
+                        <div class="text-cyan-400 font-bold uppercase tracking-widest text-xs mb-2">Eerstvolgende show</div>
+                        <h3 class="text-3xl font-black mb-2">De Beluga's in Leuven</h3>
+                        <p class="text-gray-400">Donderdag 12 maart 2026 — 20:00u</p>
+                        <p class="text-gray-400 font-bold">De Blauwe Kater, Leuven</p>
+                    </div>
+                    <a href="https://www.debelugas.be/optredens" target="_blank" class="bg-white text-black font-black py-4 px-8 rounded-xl hover:bg-cyan-400 transition-colors inline-block text-center">
+                        RESERVEREN
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="spelers" class="py-24 bg-zinc-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-tighter">De <span class="accent-color">Huidige Cast</span></h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="group relative overflow-hidden rounded-2xl bg-black border border-white/10">
-                    <img src="images/spelers/michael.webp" alt="Michael Reusens" class="w-full h-96 object-cover opacity-60 group-hover:opacity-100 transition duration-500">
-                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
-                        <p class="text-xl font-bold uppercase leading-none">Michael Reusens</p>
-                        <p class="text-cyan-400 text-[10px] uppercase tracking-widest mt-1">Speler</p>
+            <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-tighter">De <span class="accent-color">Cast</span></h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/anne-leen.webp" alt="Anne-leen" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Anne-leen</p>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-2xl bg-black border border-white/10">
-                    <img src="images/spelers/stijn.webp" alt="Stijn Conings" class="w-full h-96 object-cover opacity-60 group-hover:opacity-100 transition duration-500">
-                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
-                        <p class="text-xl font-bold uppercase leading-none">Stijn Conings</p>
-                        <p class="text-cyan-400 text-[10px] uppercase tracking-widest mt-1">Speler</p>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/eric.webp" alt="Eric" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Eric</p>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-2xl bg-black border border-white/10">
-                    <img src="images/spelers/eric.webp" alt="Eric Heselmans" class="w-full h-96 object-cover opacity-60 group-hover:opacity-100 transition duration-500">
-                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
-                        <p class="text-xl font-bold uppercase leading-none">Eric Heselmans</p>
-                        <p class="text-cyan-400 text-[10px] uppercase tracking-widest mt-1">Speler</p>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/hannes.webp" alt="Hannes" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Hannes</p>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-2xl bg-black border border-white/10">
-                    <img src="images/spelers/hannes.webp" alt="Hannes Van Biesbroeck" class="w-full h-96 object-cover opacity-60 group-hover:opacity-100 transition duration-500">
-                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
-                        <p class="text-xl font-bold uppercase leading-none">Hannes Van Biesbroeck</p>
-                        <p class="text-cyan-400 text-[10px] uppercase tracking-widest mt-1">Medeoprichter</p>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/hilde.webp" alt="Hilde" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Hilde</p>
                     </div>
                 </div>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/jasper.webp" alt="Jasper" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Jasper</p>
+                    </div>
+                </div>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/michael.webp" alt="Michael" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Michael</p>
+                    </div>
+                </div>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/pieter.webp" alt="Pieter" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Pieter</p>
+                    </div>
+                </div>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/roeland.webp" alt="Roeland" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Roeland</p>
+                    </div>
+                </div>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/sara.webp" alt="Sara" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Sara</p>
+                    </div>
+                </div>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/soetkin.webp" alt="Soetkin" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Soetkin</p>
+                    </div>
+                </div>
+
+                <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
+                    <img src="images/spelers/stijn.webp" alt="Stijn" class="w-full h-[450px] object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
+                        <p class="text-2xl font-black uppercase tracking-tight">Stijn</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="boeking" class="py-24 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto p-12 rounded-3xl border border-white/10 bg-zinc-900/50">
+                <h2 class="text-3xl font-black mb-6 uppercase tracking-tighter">De Beluga's op <span class="accent-color">uw event?</span></h2>
+                <p class="text-gray-400 mb-8 leading-relaxed">
+                    Bedrijfsfeest, vereniging of privé-event? Wij brengen improvisatie op maat.
+                </p>
+                <a href="mailto:debelugas@gmail.com?subject=Aanvraag Boeking De Beluga's" class="inline-flex items-center text-xl font-bold text-cyan-400 hover:text-white transition">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    debelugas@gmail.com
+                </a>
             </div>
         </div>
     </section>
