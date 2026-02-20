@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>De Beluga's | Improvisatietheater</title>
+    
+    <link rel="icon" type="image/webp" href="images/belugaslogo.webp">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
@@ -11,9 +14,10 @@
         body { font-family: 'Montserrat', sans-serif; background-color: #1a1a1a; color: #ffffff; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(135deg, #004e92 0%, #000428 100%); }
         .accent-color { color: #00d2ff; }
-        .ticket-glow { box-shadow: 0 0 30px rgba(0, 210, 255, 0.2); }
+        .ticket-glow { box-shadow: 0 0 30px rgba(0, 210, 255, 0.15); }
         .player-card img { filter: grayscale(30%); transition: all 0.5s ease; }
         .player-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
+        .newsletter-gradient { background: linear-gradient(90deg, #004e92 0%, #00d2ff 100%); }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -21,11 +25,12 @@
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md py-4 border-b border-white/10">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <img src="images/belugaslogo.webp" alt="De Beluga's Logo" class="h-10 w-auto">
-            <div class="hidden md:flex space-x-8 font-bold uppercase tracking-widest text-xs">
+            <div class="hidden md:flex items-center space-x-8 font-bold uppercase tracking-widest text-xs">
                 <a href="#home" class="hover:text-cyan-400 transition">Home</a>
                 <a href="#agenda" class="hover:text-cyan-400 transition">Agenda</a>
                 <a href="#spelers" class="hover:text-cyan-400 transition">Spelers</a>
-                <a href="#boeking" class="bg-cyan-500 text-black px-4 py-2 rounded-full hover:bg-white transition">Boek ons</a>
+                <a href="https://mailchi.mp/993ae2871dce/de-belugas-blijf-op-de-hoogte-van-onze-optredens" target="_blank" class="text-cyan-400 hover:text-white transition underline decoration-2 underline-offset-4">Nieuwsbrief</a>
+                <a href="#boeking" class="bg-cyan-500 text-black px-4 py-2 rounded-full hover:bg-white transition">Boek ons!</a>
             </div>
         </div>
     </nav>
@@ -36,8 +41,8 @@
                 <h1 class="text-6xl md:text-8xl font-black mb-4 uppercase tracking-tighter leading-none">DE <br><span class="accent-color">BELUGA'S</span></h1>
                 <p class="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">Niets staat vast. Alles is mogelijk. Improvisatietheater op het scherpst van de snede.</p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#agenda" class="bg-cyan-500 hover:bg-cyan-400 text-black font-black py-4 px-10 rounded-full transition-all transform hover:scale-105 inline-block text-center shadow-xl">KOOP TICKETS</a>
-                    <a href="#spelers" class="border-2 border-white hover:bg-white hover:text-black font-black py-4 px-10 rounded-full transition-all inline-block text-center">DE CAST</a>
+                    <a href="#agenda" class="bg-cyan-500 hover:bg-cyan-400 text-black font-black py-4 px-10 rounded-full transition-all transform hover:scale-105 inline-block text-center shadow-xl">BEKIJK AGENDA</a>
+                    <a href="https://mailchi.mp/993ae2871dce/de-belugas-blijf-op-de-hoogte-van-onze-optredens" target="_blank" class="border-2 border-white hover:bg-white hover:text-black font-black py-4 px-10 rounded-full transition-all inline-block text-center">NIEUWSBRIEF</a>
                 </div>
             </div>
             <div class="md:w-1/2 mt-12 md:mt-0 animate__animated animate__zoomIn flex justify-center">
@@ -49,18 +54,32 @@
     <section id="agenda" class="py-24 bg-black border-t border-white/5">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-tighter">Onze <span class="accent-color">Agenda</span></h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-zinc-900 border border-cyan-500/30 rounded-3xl p-8 ticket-glow flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="max-w-4xl mx-auto space-y-6">
+                
+                <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8 ticket-glow flex flex-col md:flex-row items-center justify-between gap-8">
                     <div class="text-center md:text-left">
-                        <div class="text-cyan-400 font-bold uppercase tracking-widest text-xs mb-2">Eerstvolgende show</div>
-                        <h3 class="text-3xl font-black mb-2">De Beluga's in Leuven</h3>
-                        <p class="text-gray-400">Donderdag 12 maart 2026 — 20:00u</p>
-                        <p class="text-gray-400 font-bold">De Blauwe Kater, Leuven</p>
+                        <h3 class="text-2xl font-black mb-2 uppercase">De Beluga's @ Het Wagehuys</h3>
+                        <p class="text-white font-bold">Zaterdag 10 oktober 2026</p>
+                        <p class="text-cyan-400 text-sm font-bold uppercase tracking-widest">20:00u - 22:30u</p>
+                        <p class="text-gray-500">Het Wagehuys, Leuven</p>
                     </div>
-                    <a href="https://www.debelugas.be/optredens" target="_blank" class="bg-white text-black font-black py-4 px-8 rounded-xl hover:bg-cyan-400 transition-colors inline-block text-center">
-                        RESERVEREN
-                    </a>
+                    <div class="bg-zinc-800 text-gray-400 font-bold py-3 px-6 rounded-xl border border-white/5 text-center text-sm">
+                        TICKETS BINNENKORT BESCHIKBAAR
+                    </div>
                 </div>
+
+                <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8 ticket-glow flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl font-black mb-2 uppercase">De Beluga's @ Het Wagehuys</h3>
+                        <p class="text-white font-bold">Zaterdag 5 maart 2027</p>
+                        <p class="text-cyan-400 text-sm font-bold uppercase tracking-widest">20:00u - 22:30u</p>
+                        <p class="text-gray-500">Het Wagehuys, Leuven</p>
+                    </div>
+                    <div class="bg-zinc-800 text-gray-400 font-bold py-3 px-6 rounded-xl border border-white/5 text-center text-sm">
+                        TICKETS BINNENKORT BESCHIKBAAR
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -68,7 +87,6 @@
     <section id="spelers" class="py-24 bg-zinc-900">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-tighter">De <span class="accent-color">Cast</span></h2>
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 
                 <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
@@ -107,7 +125,7 @@
                 </div>
 
                 <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
-                    <img src="images/spelers/michael.webp" alt="Michael" class="w-full h-[450px] object-cover">
+                    <img src="images/spelers/michael.PNG" alt="Michael" class="w-full h-[450px] object-cover">
                     <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
                         <p class="text-2xl font-black uppercase tracking-tight">Michael</p>
                     </div>
@@ -121,7 +139,7 @@
                 </div>
 
                 <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
-                    <img src="images/spelers/roeland.webp" alt="Roeland" class="w-full h-[450px] object-cover">
+                    <img src="images/spelers/roeland.png" alt="Roeland" class="w-full h-[450px] object-cover">
                     <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
                         <p class="text-2xl font-black uppercase tracking-tight">Roeland</p>
                     </div>
@@ -135,7 +153,7 @@
                 </div>
 
                 <div class="player-card group relative overflow-hidden rounded-2xl bg-black border border-white/10 text-center">
-                    <img src="images/spelers/soetkin.webp" alt="Soetkin" class="w-full h-[450px] object-cover">
+                    <img src="images/spelers/soetkin.PNG" alt="Soetkin" class="w-full h-[450px] object-cover">
                     <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/70 to-transparent">
                         <p class="text-2xl font-black uppercase tracking-tight">Soetkin</p>
                     </div>
@@ -154,16 +172,30 @@
 
     <section id="boeking" class="py-24 bg-black">
         <div class="container mx-auto px-6 text-center">
-            <div class="max-w-2xl mx-auto p-12 rounded-3xl border border-white/10 bg-zinc-900/50">
+            <div class="max-w-3xl mx-auto p-12 rounded-3xl border border-white/10 bg-zinc-900/50">
                 <h2 class="text-3xl font-black mb-6 uppercase tracking-tighter">De Beluga's op <span class="accent-color">uw event?</span></h2>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    Bedrijfsfeest, vereniging of privé-event? Wij brengen improvisatie op maat.
+                <p class="text-gray-400 mb-10 leading-relaxed">
+                    Bedrijfsfeest, vereniging of privé-event? Wij brengen improvisatie op maat. <br>
+                    Klik op de knop hieronder om een aanvraag te mailen.
                 </p>
-                <a href="mailto:debelugas@gmail.com?subject=Aanvraag Boeking De Beluga's" class="inline-flex items-center text-xl font-bold text-cyan-400 hover:text-white transition">
-                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    debelugas@gmail.com
+                <a href="mailto:debelugas@gmail.com?subject=Aanvraag Boeking De Beluga's&body=Beste Beluga's,%0D%0A%0D%0AWij hebben interesse om jullie te boeken voor ons event.%0D%0A%0D%0ADatum:%0D%0AType event:%0D%0ALocatie:%0D%0A%0D%0AMet vriendelijke groet," 
+                   class="bg-cyan-500 hover:bg-white text-black font-black py-5 px-12 rounded-2xl transition-all transform hover:scale-105 inline-flex items-center shadow-xl uppercase tracking-widest text-sm">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    Stuur ons een mail
                 </a>
             </div>
+        </div>
+    </section>
+
+    <section class="py-16 newsletter-gradient">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black text-black mb-4 uppercase tracking-tighter">Mis nooit een show!</h2>
+            <p class="text-black/80 font-bold mb-8 max-w-xl mx-auto">
+                Schrijf je in voor onze nieuwsbrief en wees als eerste op de hoogte van nieuwe data en ticketverkopen.
+            </p>
+            <a href="https://mailchi.mp/993ae2871dce/de-belugas-blijf-op-de-hoogte-van-onze-optredens" target="_blank" class="bg-black text-white hover:bg-zinc-800 font-black py-4 px-12 rounded-full transition-all transform hover:scale-105 inline-block shadow-2xl uppercase tracking-widest">
+                INSCHRIJVEN NIEUWSBRIEF
+            </a>
         </div>
     </section>
 
